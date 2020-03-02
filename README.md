@@ -1,8 +1,8 @@
 # LondonAPI
 
 run:
-'mvn install'
+`mvn install`
 
-'java -jar target/'LondonAPI.jar'
+`java -jar target/LondonAPI.jar`
 
 go to localhost:8080
