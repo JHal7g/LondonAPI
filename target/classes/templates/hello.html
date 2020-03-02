@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
-<head><title>hello</title></head>
+<head><title>hello</title>
+    
+    <style>
+
+        table, td {
+        padding: 10px;
+        border: 1px solid black; 
+        border-collapse: collapse;
+        }
+        
+        tr:nth-child(odd) {background-color: rgb(100, 202, 228)}
+        tr:nth-child(even) {background-color: rgb(233, 114, 114)}
+        tr:first-child {background-color: silver;}
+        
+    </style>
+</head>
 
 <body>
-<h1>hello</h1>
-<span th:text="${results}"></span>
+<h1>Users in London or with co-ordinates within 50 miles of London:</h1>
+<div th:if="${not #lists.isEmpty(results)}">
+<table>
+    <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>IP Address</td>
+        <td>Latitude</td>
+        <td>Longitude</td>
+        <td>Email Address</td>
+    </tr>
+
+<tr th:each="result : ${results}">
+        <td th:text="${result.getId()}"></td>
+        <td th:text="${result.getFirst_name()}"></td>
+        <td th:text="${result.getLast_name()}"></td>
+        <td th:text="${result.getIp_address()}"></td>
+        <td th:text="${result.getLatitude()}"></td>
+        <td th:text="${result.getLongitude()}"></td>
+        <td th:text="${result.getEmail()}"></td>
+    </tr>
+</table>
+</div>
+<div th:if="${#lists.isEmpty(results)}">None found!!!</div>
 </body>
 </html>
