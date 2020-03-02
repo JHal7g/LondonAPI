@@ -1,6 +1,7 @@
 # LondonAPI
 
-##To run:
+## To run:
+
 Download and unzip project,
 
 In terminal navigate in to unzipped folder and run commands:
