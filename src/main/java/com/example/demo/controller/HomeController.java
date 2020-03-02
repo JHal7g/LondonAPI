@@ -24,10 +24,10 @@ public class HomeController {
 		HttpURLConnection con1 = null, con2 = null;
 
 		//get resp 1
-		con1 = GetConnection.Connection("/city/London/userss");
+		con1 = GetConnection.Connection("/city/London/users");
 
 		//get resp 2
-		con2 = GetConnection.Connection("/userss");
+		con2 = GetConnection.Connection("/users");
 
 		//call my service here and display output in page
 		model.addAttribute("results", myService.getPeople(con1, con2));
