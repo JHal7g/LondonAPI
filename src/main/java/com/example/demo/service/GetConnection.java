@@ -13,6 +13,8 @@ public class GetConnection {
 		URL url = null;
 		try {
 			url = new URL("https://bpdts-test-app.herokuapp.com"+s);
+			//Connection for Zscaler
+			//url = new URL("http://bpdts-test-app.herokuapp.com"+s);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
